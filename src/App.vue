@@ -1,4 +1,10 @@
 <template>
+   <div
+      v-if="isLoaded"
+      class="h-screen w-screen bg-black absolute left-0 top-0 z-50 flex items-center justify-center"
+   >
+      <h1 class="text-yellow-300">Loading resources...</h1>
+   </div>
    <NotForDevice v-if="disabled" />
    <navbar v-if="!disabled" />
    <div class="relative">
@@ -39,24 +45,15 @@ export default defineComponent({
       const manager = new LoadingManager();
       let currentView = ref("Home");
       let disabled = ref(false);
+      let isLoaded = ref(true);
       manager.onStart = function (url, itemsLoaded, itemsTotal) {
-         console.log(
-            "Started loading file: " +
-               url +
-               ".\nLoaded " +
-               itemsLoaded +
-               " of " +
-               itemsTotal +
-               " files."
-         );
+         isLoaded.value = true;
       };
       manager.onLoad = function () {
-         console.log("Loading complete!");
+         isLoaded.value = false;
          tick();
       };
-      manager.onError = function (url) {
-         console.log("There was an error loading " + url);
-      };
+      manager.onError = function (url) {};
       const checkWindowSize = () => {
          if (window.innerHeight >= 600 && window.innerWidth >= 1200) {
             disabled.value = false;
@@ -73,7 +70,6 @@ export default defineComponent({
                () => {
                   planeInSpace?.onWindowResize();
                   checkWindowSize();
-                  console.log(window.innerWidth);
                },
                false
             );
@@ -107,7 +103,7 @@ export default defineComponent({
             currentView.value = e.to.toString();
          }
       };
-      return { canvas, cursor1, cursor2, routeChange, currentView, disabled };
+      return { canvas, cursor1, cursor2, routeChange, currentView, disabled, isLoaded };
    },
 });
 </script>
