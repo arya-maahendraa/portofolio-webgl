@@ -1,0 +1,20 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+   /* cursor: none; */
+}
+
+body {
+   @apply h-screen w-full text-white font-sans bg-black;
+}
+
+.btn {
+   @apply py-2 px-6 bg-yellow-300 rounded font-semibold;
+   color: #45380e;
+}
+
+.main-title {
+   @apply text-4xl leading-10 font-black;
+}

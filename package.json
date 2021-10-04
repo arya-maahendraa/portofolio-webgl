@@ -1,0 +1,35 @@
+{
+   "name": "3d-portofolio",
+   "version": "0.0.0",
+   "scripts": {
+      "dev": "vite",
+      "build": "vue-tsc --noEmit && vite build",
+      "serve": "vite preview",
+      "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+      "format": "prettier .  --write"
+   },
+   "dependencies": {
+      "@types/dat.gui": "^0.7.7",
+      "dat.gui": "^0.7.7",
+      "gsap": "^3.7.1",
+      "postcss-import": "^14.0.2",
+      "three": "^0.132.2",
+      "vue": "^3.2.13"
+   },
+   "devDependencies": {
+      "@types/three": "^0.132.1",
+      "@typescript-eslint/eslint-plugin": "^4.31.2",
+      "@typescript-eslint/parser": "^4.31.2",
+      "@vitejs/plugin-vue": "^1.9.0",
+      "autoprefixer": "^10.3.5",
+      "eslint": "^7.32.0",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-vue": "^7.18.0",
+      "postcss": "^8.3.7",
+      "prettier": "2.4.1",
+      "tailwindcss": "^2.2.15",
+      "typescript": "^4.4.3",
+      "vite": "^2.5.10",
+      "vue-tsc": "^0.3.0"
+   }
+}
