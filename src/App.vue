@@ -9,7 +9,7 @@
    <navbar v-if="!disabled" />
    <div class="relative">
       <canvas class="fixed top-0 left-0 z-0" ref="canvas"></canvas>
-      <div v-if="!disabled" class="h-screen px-10 pb-12 pt-16 w-full">
+      <div v-if="!disabled && !isLoaded" class="h-screen px-10 pb-12 pt-16 w-full">
          <!-- <router-view @onRouteChnage="routeChange($event)"></router-view> -->
          <viewHome v-if="currentView === 'Home'" @onRouteChnage="routeChange($event)" />
          <viewAbout v-if="currentView === 'About'" @onRouteChnage="routeChange($event)" />
@@ -18,12 +18,12 @@
       </div>
    </div>
    <Footer v-if="!disabled" />
-   <div v-if="!disabled" ref="cursor1" class="custom-cursor1"></div>
-   <div v-if="!disabled" ref="cursor2" class="custom-cursor2"></div>
+   <div v-if="!disabled && !isLoaded" ref="cursor1" class="custom-cursor1"></div>
+   <div v-if="!disabled && !isLoaded" ref="cursor2" class="custom-cursor2"></div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onBeforeMount, onMounted, ref } from "vue";
 import PlaneInSpace from "./three";
 import { LoadingManager } from "three";
 import Navbar from "./components/Navbar.vue";
@@ -46,6 +46,9 @@ export default defineComponent({
       let currentView = ref("Home");
       let disabled = ref(false);
       let isLoaded = ref(true);
+      onBeforeMount(() => {
+         document.title = "aryamaahendra";
+      });
       manager.onStart = function (url, itemsLoaded, itemsTotal) {
          isLoaded.value = true;
       };
