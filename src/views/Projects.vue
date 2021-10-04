@@ -102,7 +102,7 @@
                               <div class="card-body__text">
                                  <h1 class="font-bold text-gray-200">
                                     <a href="#" @click.prevent="" class="project-details"
-                                       >Journey with google.com</a
+                                       >Journey with emptiness</a
                                     >
                                  </h1>
                                  <h2 class="text-gray-300 text-sm font-light">
@@ -111,7 +111,7 @@
                                        href="#"
                                        @click.prevent=""
                                        class="project-link font-semibold underline text-indigo-500"
-                                       >apalah-coba.com</a
+                                       >404-notfounf.com</a
                                     >
                                  </h2>
                               </div>
@@ -134,7 +134,7 @@
                               <div class="card-body__text">
                                  <h1 class="font-bold text-gray-200">
                                     <a href="#" @click.prevent="" class="project-details"
-                                       >Journey with google.com</a
+                                       >Journey with void</a
                                     >
                                  </h1>
                                  <h2 class="text-gray-300 text-sm font-light">
@@ -143,12 +143,12 @@
                                        href="#"
                                        @click.prevent=""
                                        class="project-link font-semibold underline text-indigo-500"
-                                       >apalah-coba.com</a
+                                       >404-notfounf.com</a
                                     >
                                  </h2>
                               </div>
                               <div class="card-body__number">
-                                 <h1 class="text-4xl font-black text-yellow-300">#01</h1>
+                                 <h1 class="text-4xl font-black text-yellow-300">#02</h1>
                               </div>
                            </div>
                         </div>
